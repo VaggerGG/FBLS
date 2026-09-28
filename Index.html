@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Cuentos de Terror Infantiles | FUNZA</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 📚 PDFlipbook: la librería se carga sola -->
+    <script src="pdflipbook.js"></script>
+</head>
+<body>
+    <div class="libro-terror">
+        <header>
+            <h1>FUNZA</h1>
+            <p class="subtitulo">Historias para no dormir... pero con dulces finales</p>
+        </header>
+
+        <main>
+            <!-- Sección de tarjetas de cuentos -->
+            <section class="cuentos">
+                <!-- Cuento 1 -->
+                <article class="tarjeta-cuento">
+                    <div class="icono-terror">🌲👁️</div>
+                    <h2>Su Último Paseo Juntas</h2>
+                    <p>Caterin y Daniela caminan por el bosque de Funza cuando la niebla empieza a susurrar sus nombres desde el suelo. Al mirar atrás, una de ellas ya no proyecta sombra... y la otra acaba de notarlo.</p>
+                    <button class="boton-leer"
+                            data-titulo="Su Último Paseo Juntas"
+                            data-icono="🌲👁️"
+                            data-video="videos/video1.mp4"
+                            data-pdf="cuentos/cuento1.pdf"
+                            data-texto-pdf="📖 Leer el cuento completo">
+                        📖 Ver más
+                    </button>
+                </article>
+
+                <!-- Cuento 2 -->
+                <article class="tarjeta-cuento">
+                    <div class="icono-terror">🌫️🕰️</div>
+                    <h2>El Humedal Gualí y Su Terror</h2>
+                    <p>Mateo y Helen solo iban a recoger basura en el humedal. Pero el agua se volvió tinta, algo alto empezó a caminar entre los troncos, y una carta con humedad les pidió volver a las 3:33 de la madrugada.</p>
+                    <button class="boton-leer"
+                            data-titulo="El Humedal Gualí y Su Terror"
+                            data-icono="🌫️🕰️"
+                            data-video="videos/video2.mp4"
+                            data-pdf="cuentos/cuento2.pdf"
+                            data-texto-pdf="📖 Leer el cuento completo">
+                        📖 Ver más
+                    </button>
+                </article>
+
+                <!-- Cuento 3 -->
+                <article class="tarjeta-cuento">
+                    <div class="icono-terror">👹✝️</div>
+                    <h2>Demonios en un Lugar Santo</h2>
+                    <p>Un exorcista recibe una llamada urgente en plena noche. Al llegar, encuentra a dos gemelos de ojos rojos que devoran para hacerse más fuertes. Solo el sonido y la fe pueden detenerlos... pero esta batalla apenas comienza.</p>
+                    <button class="boton-leer"
+                            data-titulo="Demonios en un Lugar Santo"
+                            data-icono="👹✝️"
+                            data-video="videos/video3.mp4"
+                            data-pdf="cuentos/cuento3.pdf"
+                            data-texto-pdf="📖 Leer el cuento completo">
+                        📖 Ver más
+                    </button>
+                </article>
+
+                <!-- Cuento 4 -->
+                <article class="tarjeta-cuento">
+                    <div class="icono-terror">🐍🏚️</div>
+                    <h2>La Última Pijamada</h2>
+                    <p>Un grupo de amigos entra a una casa abandonada que no se parece en nada al folleto. Entre cartas viejas y platos rotos encuentran una estatua de serpiente que parece mirarlos. Esa noche, algo se mueve en la oscuridad... y quiere jugar.</p>
+                    <button class="boton-leer"
+                            data-titulo="La Última Pijamada"
+                            data-icono="🐍🏚️"
+                            data-video="videos/video4.mp4"
+                            data-pdf="cuentos/cuento4.pdf"
+                            data-texto-pdf="📖 Leer el cuento completo">
+                        📖 Ver más
+                    </button>
+                </article>
+            </section>
+
+            <!-- Sección de datos escalofriantes -->
+            <section class="datos-aterradores">
+                <h3><span>🕯️</span> ¿Sabías que...?</h3>
+                <ul class="lista-misteriosa">
+                    <li>👣 Los cuentos de terror infantiles ayudan a superar miedos</li>
+                    <li>📜 Se originaron en tradiciones orales del siglo XIX</li>
+                    <li>🌙 Los mejores se leen con una linterna bajo las sábanas</li>
+                    <li>🎭 Nunca termines un cuento sin un final esperanzador</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>✧ Proyecto de cuentos de terror hechos por niños para valientes ✧</p>
+            <p class="creditos">Hecho con <span class="corazon">❤️</span> y un poco de susto :)</p>
+        </footer>
+    </div>
+
+    <!-- ============================================
+         MODAL 1: VIDEO DEL CUENTO
+         ============================================ -->
+    <div class="modal-overlay" id="modalVideoOverlay">
+        <div class="modal-contenido">
+            <button class="modal-cerrar" id="modalVideoCerrar" aria-label="Cerrar">✕</button>
+
+            <div class="modal-icono" id="modalVideoIcono">🌕</div>
+            <h2 class="modal-titulo" id="modalVideoTitulo">Título del cuento</h2>
+
+            <!-- Contenedor del video -->
+            <div class="modal-video">
+                <iframe id="modalVideo"
+                        src=""
+                        title="Video del cuento"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Botón que cierra este modal y abre el PDF -->
+            <button class="modal-enlace" id="modalVideoPdfBtn">
+                📖 Leer el cuento completo
+            </button>
+        </div>
+    </div>
+
+    <!-- ============================================
+         MODAL 2: PDF FLIPBOOK
+         ============================================ -->
+    <div class="modal-overlay" id="modalPdfOverlay">
+        <div class="modal-contenido modal-contenido-pdf">
+            <button class="modal-cerrar" id="modalPdfCerrar" aria-label="Cerrar">✕</button>
+
+            <div class="modal-icono" id="modalPdfIcono">🌕</div>
+            <h2 class="modal-titulo" id="modalPdfTitulo">Título del cuento</h2>
+
+            <!-- Contenedor donde se creará el flipbook -->
+            <div class="modal-flipbook" id="modalFlipbook"></div>
+        </div>
+    </div>
+
+    <!-- Logo flotante -->
+    <img src="logocolsubsidio.png" alt="Logo FUNZA" class="logo-flotante">
+
+    <script src="script.js"></script>
+</body>
+</html>

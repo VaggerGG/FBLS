@@ -1,0 +1,603 @@
+/* ============================================
+   RESET Y ESTILOS BÁSICOS
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', 'Segoe UI', system-ui, sans-serif;
+    background-color: #0b0a0f;
+    background-image: radial-gradient(circle at 20% 30%, #1a0f1a 0%, #050308 100%);
+    color: #e0d7d0;
+    line-height: 1.6;
+    padding: 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
+.libro-terror {
+    max-width: 1100px;
+    width: 100%;
+    background: rgba(20, 15, 20, 0.85);
+    backdrop-filter: blur(6px);
+    border: 3px solid #3e2c3b;
+    border-radius: 40px 12px 40px 12px;
+    box-shadow: 0 0 30px #2a0f1a, 0 0 10px #5e2e4a inset;
+    padding: 2rem 2rem 2.5rem;
+    margin: 1.5rem 0;
+    transition: all 0.2s;
+}
+
+/* ============================================
+   ENCABEZADO
+   ============================================ */
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    border-bottom: 2px dashed #5f3b4b;
+    padding-bottom: 1.5rem;
+    position: relative;
+}
+
+header::before {
+    content: "🌙🌙";
+    font-size: 3rem;
+    opacity: 0.4;
+    position: absolute;
+    left: 5%;
+    top: -10px;
+    transform: rotate(-15deg);
+    filter: drop-shadow(0 0 8px #b37b8b);
+}
+
+header::after {
+    content: "👻👻";
+    font-size: 3rem;
+    opacity: 0.3;
+    position: absolute;
+    right: 5%;
+    bottom: -5px;
+    transform: rotate(10deg);
+    filter: drop-shadow(0 0 8px #a56b7b);
+}
+
+h1 {
+    font-family: 'Creepster', 'Segoe UI', cursive;
+    font-size: 3.5rem;
+    letter-spacing: 8px;
+    color: #bc9aa8;
+    text-shadow: 0 0 8px #b3003c, 0 0 20px #4a0022, 0 2px 4px black;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    word-break: break-word;
+    text-transform: uppercase;
+}
+
+.subtitulo {
+    font-style: italic;
+    color: #b1a0a8;
+    font-size: 1.2rem;
+    text-shadow: 0 0 4px #330022;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   SECCIÓN DE CUENTOS (TARJETAS)
+   ============================================ */
+.cuentos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2.5rem 0 1.5rem;
+}
+
+.tarjeta-cuento {
+    flex: 1 1 280px;
+    max-width: 350px;
+    background: #1f1720;
+    border-radius: 25px 8px 25px 8px;
+    padding: 1.8rem 1.5rem 1.5rem;
+    box-shadow: 0 10px 20px -5px #000000cc, 0 0 0 1px #513b4b inset;
+    border-left: 5px solid #9e5f7a;
+    transition: transform 0.25s ease, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-cuento:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 18px 25px -8px #3f0e27, 0 0 0 2px #b87a94 inset;
+    background: #261d26;
+}
+
+.tarjeta-cuento::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 100% 0%, #6b1f3b, transparent 70%);
+    opacity: 0.5;
+    border-radius: 0 0 0 30px;
+}
+
+.icono-terror {
+    font-size: 2.4rem;
+    margin-bottom: 0.25rem;
+    filter: drop-shadow(0 0 6px #a00);
+    align-self: flex-start;
+}
+
+.tarjeta-cuento h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #dbb8c7;
+    margin: 0.5rem 0 0.75rem;
+    letter-spacing: 1px;
+    border-left: 4px solid #b45f7a;
+    padding-left: 0.9rem;
+    text-shadow: 0 2px 3px black;
+    line-height: 1.3;
+}
+
+.tarjeta-cuento p {
+    font-size: 0.98rem;
+    color: #cbb9c2;
+    margin-bottom: 1.4rem;
+    flex: 1;
+}
+
+.boton-leer {
+    background: transparent;
+    border: 2px solid #a5647a;
+    color: #e5cfd9;
+    padding: 0.7rem 1.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 40px 8px 40px 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 2px;
+    align-self: flex-start;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px #4d1b2e;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    font-family: inherit;
+}
+
+.boton-leer:hover {
+    background: #6d2e45;
+    border-color: #d68fa8;
+    color: #fff2f5;
+    box-shadow: 0 0 16px #b34b6e;
+    transform: scale(1.02);
+}
+
+/* ============================================
+   SECCIÓN DE DATOS CURIOSOS
+   ============================================ */
+.datos-aterradores {
+    background: #130e13e0;
+    border-radius: 30px 8px 30px 8px;
+    border: 1px solid #614153;
+    padding: 1.8rem 2rem;
+    margin: 2.8rem 0 1.5rem;
+    box-shadow: 0 0 18px #2e1622 inset, 0 8px 12px #00000060;
+}
+
+.datos-aterradores h3 {
+    font-size: 1.8rem;
+    color: #b393a3;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid #4f3443;
+    padding-bottom: 0.6rem;
+}
+
+.datos-aterradores h3 span {
+    font-size: 2rem;
+}
+
+.lista-misteriosa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.lista-misteriosa li {
+    background: #1d141d;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #c7b1bc;
+    box-shadow: 0 0 0 1px #6f4b5e inset;
+    flex: 1 1 160px;
+    text-align: center;
+    backdrop-filter: blur(2px);
+    font-weight: 500;
+}
+
+/* ============================================
+   PIE DE PÁGINA
+   ============================================ */
+footer {
+    text-align: center;
+    margin-top: 2.8rem;
+    color: #7a6370;
+    font-size: 0.9rem;
+    border-top: 1px dashed #513a48;
+    padding-top: 1.5rem;
+    letter-spacing: 1px;
+}
+
+footer .corazon {
+    color: #b34b6e;
+    font-size: 1.1rem;
+    animation: latido 2s infinite;
+    display: inline-block;
+}
+
+.creditos {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+@keyframes latido {
+    0%   { transform: scale(1); }
+    20%  { transform: scale(1.2); }
+    40%  { transform: scale(1); }
+    60%  { transform: scale(1.1); }
+    80%  { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+/* ============================================
+   MODAL (VENTANA EMERGENTE)
+   ============================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 3, 8, 0.85);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+}
+
+.modal-overlay.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-contenido {
+    position: relative;
+    background: #1a121b;
+    border: 2px solid #6b3f57;
+    border-radius: 30px 10px 30px 10px;
+    padding: 2rem 1.8rem 1.8rem;
+    max-width: 1100px;         /* 👈 modal ancho para el video */
+    width: 100%;
+    max-height: 95vh;
+    overflow-y: auto;
+    box-shadow: 0 0 40px #b34b6e, 0 0 15px #4a0022 inset;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.activo .modal-contenido {
+    transform: scale(1);
+}
+
+.modal-cerrar {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: 2px solid #a5647a;
+    color: #e5cfd9;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    z-index: 10;
+}
+
+.modal-cerrar:hover {
+    background: #6d2e45;
+    border-color: #d68fa8;
+    color: #fff2f5;
+    box-shadow: 0 0 12px #b34b6e;
+    transform: rotate(90deg);
+}
+
+.modal-icono {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 8px #a00);
+    margin-bottom: 0.3rem;
+}
+
+.modal-titulo {
+    font-size: 1.8rem;
+    color: #dbb8c7;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px black;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px dashed #5f3b4b;
+}
+
+/* ============================================
+   📹 MODAL DE VIDEO (más grande)
+   ============================================ */
+.modal-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #2e1622, 0 0 0 2px #4d1b2e inset;
+    margin-bottom: 1.5rem;
+    background: #000;
+}
+
+.modal-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ============================================
+   📖 MODAL DE PDF (más grande que el de video)
+   ============================================ */
+.modal-contenido-pdf {
+    max-width: 1100px;
+    padding: 2rem 1.8rem 1.8rem;
+}
+
+.modal-flipbook {
+    width: 100%;
+    min-height: 550px;        /* 👈 más alto para que se vea bien */
+    margin-bottom: 0.5rem;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #0a070a;
+    box-shadow: 0 0 20px #2e1622, 0 0 0 2px #4d1b2e inset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-flipbook canvas {
+    border-radius: 12px;
+}
+
+/* El botón PDF tiene estilo de botón (no de enlace) */
+button.modal-enlace {
+    cursor: pointer;
+}
+
+/* ============================================
+   BOTÓN DE ENLACE
+   ============================================ */
+.modal-enlace {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #a5647a;
+    color: #e5cfd9;
+    padding: 0.9rem 1.8rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 40px 8px 40px 8px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px #4d1b2e;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.modal-enlace:hover {
+    background: #6d2e45;
+    border-color: #d68fa8;
+    color: #fff2f5;
+    box-shadow: 0 0 16px #b34b6e;
+    transform: scale(1.03);
+}
+
+/* ============================================
+   LOGO FLOTANTE
+   ============================================ */
+.logo-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    z-index: 998;
+    filter: drop-shadow(0 0 10px #b34b6e);
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+    pointer-events: auto;
+    opacity: 0.6;
+}
+
+.logo-flotante:hover {
+    opacity: 1;
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 18px #d68fa8);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 700px) {
+    body {
+        padding: 0.8rem;
+    }
+
+    .libro-terror {
+        padding: 1.5rem 1.2rem;
+        border-radius: 25px 8px 25px 8px;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        letter-spacing: 4px;
+    }
+
+    header::before,
+    header::after {
+        font-size: 2rem;
+        opacity: 0.2;
+    }
+
+    .subtitulo {
+        font-size: 1rem;
+    }
+
+    .tarjeta-cuento {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .lista-misteriosa li {
+        flex: 1 1 100%;
+    }
+
+    .datos-aterradores {
+        padding: 1.2rem;
+    }
+
+    .modal-contenido,
+    .modal-contenido-pdf {
+        padding: 1.2rem 0.8rem 1rem;
+        max-width: 100%;
+        max-height: 95vh;
+    }
+
+    .modal-titulo {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .modal-icono {
+        font-size: 2.4rem;
+        margin-bottom: 0.2rem;
+    }
+
+    /* 📖 PDF FLIPBOOK — Ajustado para móvil vertical */
+    .modal-flipbook {
+        height: 70vh;          /* 👈 Ocupa la mayor parte de la pantalla */
+        min-height: 70vh;
+        max-height: 70vh;
+        margin-bottom: 0.8rem;
+        border-radius: 10px;
+    }
+
+    /* El canvas del PDF debe caber completo sin cortarse */
+    .modal-flipbook canvas,
+    .modal-flipbook img,
+    .modal-flipbook .df-book,
+    .modal-flipbook .flipbook {
+        max-width: 100% !important;
+        max-height: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain;   /* 👈 Clave: la imagen se ajusta sin recortarse */
+        display: block;
+        margin: 0 auto;
+    }
+
+    .modal-enlace {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .logo-flotante {
+        width: 60px;
+        height: 60px;
+        bottom: 12px;
+        right: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+
+    .tarjeta-cuento h2 {
+        font-size: 1.3rem;
+    }
+
+    .boton-leer {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .modal-icono {
+        font-size: 2rem;
+    }
+
+    .modal-titulo {
+        font-size: 1.15rem;
+    }
+
+    /* 📖 PDF aún más optimizado para pantallas pequeñas */
+    .modal-flipbook {
+        height: 75vh;         /* 👈 Aprovecha más altura en móviles pequeños */
+        min-height: 75vh;
+        max-height: 75vh;
+    }
+
+    .modal-contenido-pdf {
+        padding: 1rem 0.5rem 0.8rem;
+    }
+
+    .logo-flotante {
+        width: 50px;
+        height: 50px;
+    }
+}
